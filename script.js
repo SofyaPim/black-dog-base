@@ -90,17 +90,12 @@ document.addEventListener("DOMContentLoaded", function () {
       this.frameY = 0;
     }
     draw(context) {
-      // context.fillStyle = "green";
-      // context.fillRect(this.x, this.y, this.width, this.height);
-      //   context.strokeStyle = 'white';
-      //   context.strokeRect(this.x, this.y, this.width, this.height);
-      //   context.beginPath();
-      //   context.arc(this.x + this.width/2, this.y + this.height/2, this.width/2, 0, Math.PI *2);
-      //   context.stroke();
-      //   context.strokeStyle = 'blue';
-      //   context.beginPath();
-      //  context.arc(this.x, this.y, this.width/2, 0, Math.PI *2);
-      //  context.stroke();
+    
+    // context.lineWidth = 5;
+    //     context.strokeStyle = 'blue';
+    //     context.beginPath();
+    //    context.arc(this.x + this.width/2, this.y + this.height/2 + 20, this.width/3, 0, Math.PI *2);
+    //    context.stroke();
       context.drawImage(
         this.image,
         this.frameX * this.width,
@@ -113,13 +108,14 @@ document.addEventListener("DOMContentLoaded", function () {
         this.height
       );
     }
+   
     update(input, deltaTime, enemies) {
       // collision detection
       enemies.forEach((enemy) => {
-        const dx = enemy.x + enemy.width / 2 - (this.x + this.width / 2);
-        const dy = enemy.y + enemy.height / 2 - (this.y + this.width / 2);
+        const dx = (enemy.x + enemy.width / 2 - 20) - (this.x + this.width / 2);
+        const dy = enemy.y + enemy.height / 2 - (this.y + this.width / 2 + 20);
         const distance = Math.hypot(dx, dy);
-        if (distance < enemy.width / 2 + this.width / 2) {
+        if (distance < enemy.width / 3 + this.width / 3) {
           gameOver = true;
         }
       });
@@ -219,21 +215,8 @@ document.addEventListener("DOMContentLoaded", function () {
       this.markedForDeletion = false;
     }
     draw(context) {
-      context.strokeStyle = "white";
-      context.strokeRect(this.x, this.y, this.width, this.height);
-      context.beginPath();
-      context.arc(
-        this.x + this.width / 2,
-        this.y + this.height / 2,
-        this.width / 2,
-        0,
-        Math.PI * 2
-      );
-      context.stroke();
-      context.strokeStyle = "blue";
-      context.beginPath();
-      context.arc(this.x, this.y, this.width / 2, 0, Math.PI * 2);
-      context.stroke();
+   
+   
       context.drawImage(
         this.image,
         this.frameX * this.width,
@@ -245,6 +228,11 @@ document.addEventListener("DOMContentLoaded", function () {
         this.width,
         this.height
       );
+    //   context.lineWidth = 5;
+    //   context.strokeStyle = 'blue';
+    //   context.beginPath();
+    //  context.arc(this.x + this.width/2 - 20, this.y + this.height/2, this.width/3, 0, Math.PI *2);
+    //  context.stroke();
     }
     update(deltaTime) {
       if (this.frameTimer > this.frameInterval) {
