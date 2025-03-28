@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let gameOver = false;
   const fullScreenButton = document.getElementById("fullScreenButton");
 
+
+
   class InputHandler {
     constructor() {
       this.keys = [];
@@ -292,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       context.fillStyle = "white";
       context.fillText(
-        "Enter или swipe down пробуй ещё",
+        "Enter или смахни вниз на телефоне пробуй ещё",
         canvas.width / 2 + 2,
         canvas.height / 2 + 42
       );
