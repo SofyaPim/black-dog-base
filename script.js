@@ -288,13 +288,13 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       context.fillStyle = "black";
       context.fillText(
-        "Enter или swipe down пробуй ещё",
+        "Enter или смахни вниз на телефоне, пробуй ещё",
         canvas.width / 2,
         canvas.height / 2 + 40
       );
       context.fillStyle = "white";
       context.fillText(
-        "Enter или смахни вниз на телефоне пробуй ещё",
+        "Enter или смахни вниз на телефоне, пробуй ещё",
         canvas.width / 2 + 2,
         canvas.height / 2 + 42
       );
