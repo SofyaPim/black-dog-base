@@ -8,9 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let score = 0;
   let gameOver = false;
   const fullScreenButton = document.getElementById("fullScreenButton");
-
-
-
   class InputHandler {
     constructor() {
       this.keys = [];
@@ -92,12 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
       this.frameY = 0;
     }
     draw(context) {
-    
-    // context.lineWidth = 5;
-    //     context.strokeStyle = 'blue';
-    //     context.beginPath();
-    //    context.arc(this.x + this.width/2, this.y + this.height/2 + 20, this.width/3, 0, Math.PI *2);
-    //    context.stroke();
       context.drawImage(
         this.image,
         this.frameX * this.width,
@@ -217,8 +208,6 @@ document.addEventListener("DOMContentLoaded", function () {
       this.markedForDeletion = false;
     }
     draw(context) {
-   
-   
       context.drawImage(
         this.image,
         this.frameX * this.width,
@@ -230,11 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
         this.width,
         this.height
       );
-    //   context.lineWidth = 5;
-    //   context.strokeStyle = 'blue';
-    //   context.beginPath();
-    //  context.arc(this.x + this.width/2 - 20, this.y + this.height/2, this.width/3, 0, Math.PI *2);
-    //  context.stroke();
+
     }
     update(deltaTime) {
       if (this.frameTimer > this.frameInterval) {
@@ -288,13 +273,13 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       context.fillStyle = "black";
       context.fillText(
-        "Enter или смахни вниз на телефоне, пробуй ещё",
+        "Enter или swipe, пробуй ещё",
         canvas.width / 2,
         canvas.height / 2 + 40
       );
       context.fillStyle = "white";
       context.fillText(
-        "Enter или смахни вниз на телефоне, пробуй ещё",
+        "Enter или swipe, пробуй ещё",
         canvas.width / 2 + 2,
         canvas.height / 2 + 42
       );
